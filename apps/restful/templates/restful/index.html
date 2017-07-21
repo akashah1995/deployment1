@@ -1,0 +1,30 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Users</h1>
+        <table>
+            <th>id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+            {% for info in data %}
+                <tr>
+                    <td>{{info.id}}</td>
+                    <td>{{info.first_name}} {{info.last_name}}</td>
+                    <td>{{info.email}}</td>
+                    <td>{{info.created_at}}</td>
+                    <td>
+                        <a href = '/users/{{info.id}}'>Show</a>
+                        <a href = '/users/{{info.id}}/edit'>Edit</a>
+                        <a href = '/users/{{info.id}}/delete'>Delete</a>
+                </tr>
+            {% endfor %}
+        </table>
+        <form action = '/users/addpage' method = 'POST'>
+            {% csrf_token %}
+            <input type = "submit" value = "Add User">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1> Thank you for your business! </h1>
+        <p> We charged your credit card for {{request.session.cost}}.</p>
+        <br>
+        <p> You have ordered {{request.session.total}} items so far and spent </p>
+        <p> {{request.session.bought}} with Amadon.com!</p>
+        <form action = '/amadon/back' method = 'POST'>
+            {% csrf_token %}
+            <input type = 'submit' value = "back">
+
+        </form>
+        <form action = '/amadon/leave' method = 'POST'>
+            {% csrf_token %}
+            <input type = 'submit' value = "checkout">
+        </form>
+
+    </body>
+</html>

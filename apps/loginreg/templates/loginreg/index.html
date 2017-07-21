@@ -1,0 +1,26 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+        <h1> Success! Welcome {{user.first_name}}! </h1>
+        <h1> Registration </h1>
+        <form action = '/loginreg/register' method = 'POST'>
+            {% csrf_token %}
+            First Name: <input type = "text" name = "firstname">
+            Last Name: <input type = "text" name = "lastname">
+            Email: <input type = "text" name = "email">
+            Password: <input type = "text" name = "password">
+            Confirmation: <input type = "text" name = "confirmation">
+            <input type = "submit" value = "Register">
+        </form>
+        <form action = '/loginreg/login' method = 'POST'>
+            {% csrf_token %}
+            Email: <input type = "text" name = "email">
+            Password: <input type = "text" name = "password">
+            <input type = "submit" value = "login">
+        </form>
+    </body>
+</html>

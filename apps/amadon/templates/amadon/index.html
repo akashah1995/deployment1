@@ -1,0 +1,63 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1> Amadon Store </h1>
+
+            <table>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+                <form action = '/amadon/buy' method = 'POST'>
+                {% csrf_token %}
+                <tr>
+                    <td>Dojo Tshirt </td>
+                    <td>$19.99</td>
+                    <td><select name = 'quantity'><option value = "1">1</option><option value = "2">2</option><option value = "3">3</option></select></td>
+                    <td><input type = "submit" value = "Buy!"><input type = "hidden" value = '19.99' name = 'cost'></td>
+                </tr>
+                </form>
+                <form action = '/amadon/buy' method = 'POST'>
+                {% csrf_token %}
+                <tr>
+                    <td>Dojo Tshirt </td>
+                    <td>$29.99</td>
+                    <td><select name = 'quantity'><option value = "1">1</option><option value = "2">2</option><option value = "3">3</option></select></td>
+                    <td><input type = "submit" value = "Buy!"><input type = "hidden" value = '29.99' name = 'cost'></td>
+                </tr>
+                </form>
+                <form action = '/amadon/buy' method = 'POST'>
+                {% csrf_token %}
+                <tr>
+                    <td>Dojo Tshirt </td>
+                    <td>$4.99</td>
+                    <td><select name = 'quantity'><option value = "1">1</option><option value = "2">2</option><option value = "3">3</option></select></td>
+                    <td><input type = "submit" value = "Buy!"><input type = "hidden" value = '4.99' name = 'cost'></td>
+                </tr>
+                </form>
+                <form action = '/amadon/buy' method = 'POST'>
+                {% csrf_token %}
+                <tr>
+                    <td>Dojo Tshirt </td>
+                    <td>$49.99</td>
+                    <td><select name = 'quantity'><option value = "1">1</option><option value = "2">2</option><option value = "3">3</option></select></td>
+                    <td><input type = "submit" value = "Buy!"><input type = "hidden" value = '49.99' name = 'cost'></td>
+                </tr>
+                </form>
+
+            </table>
+
+                    
+            
+            
+            
+            <!-- <input type = "text" name = "word"><br>
+            <input type="radio" name="color" value="red"> Red<br>
+            <input type="radio" name="color" value="blue"> Blue<br>
+            <input type="radio" name="color" value="green"> Green<br>
+            <input type="checkbox" name="style" value = "bold"> Show in Big Fonts! <br>
+            <input type="submit" value="Add to Session"> -->
+
+    </body>
+</html>

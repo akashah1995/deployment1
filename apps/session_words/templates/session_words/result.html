@@ -1,0 +1,20 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            .blue{color:blue}
+            .red{color:red}
+            .green{color:green}
+            .bold{font-weight:bold}
+        </style>
+        {% for data in request.session.data %}
+            <p class = '{{data.color}} {{data.style}}'> {{data.word}} </p><h4>added on {{data.time}}</h4>
+        {% endfor %}
+
+        <form action = '/session_words/reset' method = 'POST'>
+            {% csrf_token %}
+            <input type = "submit" value = "Clear Session">
+        </form>
+    </body>
+</html>

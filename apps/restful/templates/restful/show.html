@@ -1,0 +1,16 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>User {{data.id}}</h1>
+        <p>Full Name: {{data.first_name}} {{data.last_name}}</p>
+        <p>Email: {{data.email}}</p>
+        <p>Created at: {{data.created_at}}</p>
+    </body>
+    <a href = '/users/{{data.id}}/edit'>Edit</a>
+    <a href = '/users/{{data.id}}/delete'>Delete</a>
+    <form action = '/users/back' method = 'POST'>
+        {% csrf_token %}
+        <input type = "submit" value = "back">
+    </form>
+</html>

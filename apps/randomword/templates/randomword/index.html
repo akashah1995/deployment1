@@ -1,0 +1,12 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1> Random Word </h1>
+        <p> {{request.session.randomword}}</p>
+        <form action = '/random_word/reset' method = 'POST'>
+            {% csrf_token %}
+            <input type = "submit" value = "Generate">
+        </form>
+    </body>
+</html>

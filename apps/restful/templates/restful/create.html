@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1> Add a New User </h1>
+        <form action = '/users/add' method = 'POST'>
+            {% csrf_token %}
+            First Name: <input type = "text" name = "firstname">
+            Last Name: <input type = "text" name = "lastname">
+            Email: <input type = "text" name = "email">
+            <input type = "submit" value = "create">
+        </form>
+        <form action = '/users/back' method = 'POST'>
+            {% csrf_token %}
+            <input type = "submit" value = "back">
+        </form>
+    </body>
+</html>
+        

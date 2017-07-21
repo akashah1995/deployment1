@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <style>
+            .red {
+                color:red
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Are you sure you want to delete this course </h1>
+        <p>{{course.name}}</p>
+        <p>{{course.description}}</p>
+        <form action = 'course/remove/{{course.id}}' method = 'POST'>
+            {% csrf_token %}
+            <input class = "red" type = "submit" value = "Yes I want to delete this course">
+        </form>
+        <form action = 'course/back' method = 'POST'>
+            {% csrf_token %}
+            <input type = "submit" value = "No">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form action = '/session_words/submit' method = 'POST'>
+            {% csrf_token %}
+            <h1>Add a New Word</h1>
+            <input type = "text" name = "word"><br>
+            <input type="radio" name="color" value="red"> Red<br>
+            <input type="radio" name="color" value="blue"> Blue<br>
+            <input type="radio" name="color" value="green"> Green<br>
+            <input type="checkbox" name="style" value = "bold"> Show in Big Fonts! <br>
+            <input type="submit" value="Add to Session">
+        </form>
+    </body>
+</html>

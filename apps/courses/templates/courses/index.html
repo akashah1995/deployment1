@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            .error { 
+                color:red
+            }
+        </style>
+    </head>
+    <body>
+        {% for message in messages %}
+            <p class = 'error'>{{message}}</p>
+        {% endfor %}
+        <h1> Add a New Course! </h1>
+        <form action = '/courses/addcourse' method = 'POST'>
+            {% csrf_token %}
+            Name: <input type = "text" name = "name">
+            Description: <input type = "text" name = "description">
+            <input type = "submit" value  = "Add">
+        </form>
+
+        <h1>Courses</h1>
+        <table>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Data Added</th>
+            <th>Actions</th>
+
+            {% for info in data %}
+                <tr>
+                    <td>{{info.name}}</td>
+                    <td>{{info.description}}</td>
+                    <td>{{info.created_at}}</td>
+                    <td>
+                        <form action = '/courses/destroy/{{info.id}}' method = 'POST'>
+                            {% csrf_token %}
+                            <input type = "submit" value = "delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+
+    </body>
+</html>

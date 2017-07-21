@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Edit User {{data}}</h1>
+        <form action = '/users/update' method = 'POST'>
+        {% csrf_token %}
+        <p>First Name: <input type = "text" name = "firstname"></p>
+        <p>Last Name: <input type = "text" name = "lastname"></p>
+        <p>Email: <input type = "text" name = "email"></p>
+        <input type = "hidden" name = "id" value = {{data}}>
+        <input type = "submit" value = "Update">
+        </form>
+        <form action = '/users/back' method = 'POST'>
+            {% csrf_token %}
+            <input type = "submit" value = "back">
+        </form>
+        <a href = '/users/{{data}}'>Show</a>
+        
+    </body>
+</html>

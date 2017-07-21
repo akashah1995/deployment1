@@ -1,0 +1,22 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            .red{
+                color:red
+            }
+            .green{
+                color:green
+            }
+        </style>
+        <h3>Gold: {{request.session.gold}} </h3>
+        <form action = '/ninjagold/findgold' method = 'POST'>
+        {% csrf_token %}
+            <input type = "submit" value = "gamble">
+        </form>
+        {% for activity in request.session.activities %}
+            <p class = '{{activity.color}}'> {{activity.amount}} added to/subtracted from account at {{data.time}}</p>
+        {% endfor %}
+    </body>
+</html>
